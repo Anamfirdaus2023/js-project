@@ -3,108 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test</title>
 </head>
 <body>
-    JS
+    <h1>Products</h1>
+<span id="counter"></span>
+    <div id="product-list">
+        <p id="p1">product 1</p>
+        <button class="btn" value="product-1" >Add product</button>
+
+        <p id="p2">product 2</p>
+        <button class="btn" value="product-2" >Add product</button>
 
 
-    <script>
+        <p id="p3">product 3</p>
+        <button class="btn" value="product-3">Add product</button>
+    </div>
+   
+   
 
-// name = "affan"
-// number = 4.987324324
-// isTrue = true
-// isfalse = false
+    <ol id="show-products">
+       
+    </ol>
+   
 
-// const pi = 3.141
-
-
-// isNull = null
-// isUndefine = undefined
-
-// arr = ["Affan",344,564.45,true,false]
-// arr2=["12"]
-
-// name ="Affan Ansari"
-
-
-
+<script>
+    // picking th elements & store in variables
+    product1 = document.getElementById("p1")
+    addProductBtn = document.getElementById("btn")
+    showProducts = document.getElementById("show-products")
+    btns = document.querySelectorAll(".btn")
+    count = document.getElementById("counter")
 
 
-// product = {
-// id: 1,
-// title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-// price: 109.95,
-// description: "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-// category: "men's clothing",
-// image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-// rating: {
-// rate: 3.9,
-// count: 120
-// },
-// }
+let counter =0
 
 
-//destructuring of object & array
-// console.log(product.price);
+function updateproductCount(){
+    count.textContent = counter
+}
 
-// console.log(product.price);
-// const {id,price,rating} = product;
-// console.log(id);
+    btns.forEach((button)=>{
+           
 
-// arr = ["Affan",344,564.45,true,false]
-// console.log(arr[3]);
-// const [names,prices,pt] = arr
-// console.log(names);
+        button.addEventListener("click",()=>{
 
-// function ragistration(product){
- 
-//     return product 
+        const elementCreated = document.createElement("li")
+        elementCreated.textContent = button.value
+        showProducts.appendChild(elementCreated)
 
-// }
+        const buttonCreated = document.createElement("button")
+        buttonCreated.textContent = "Remove"
+        removebtn = showProducts.appendChild(buttonCreated)
+     
+        buttonCreated.addEventListener("click",()=>{
 
+        showProducts.removeChild(elementCreated)
+            const removebtn = showProducts.removeChild(buttonCreated)
+            counter--
+            updateproductCount()
+        })
 
-// function getname(){
-//     console.log("Test");
-// }
-
-//arrow function
-
-// const getName =()=> {
-//     console.log("Test...");
-// }
-
-// getName()
+            counter++
+            updateproductCount()
+        })    
 
 
-//spred opetor
-
-// arr = ["Affan",344,564.45,true,false]
-// arr2 = ["tes",45.776,true,"jetkero"]
-
-// newarr = [...arr,...arr2]
-
-// function getArr(...userarr){
-
-//     console.log(userarr);
-// }
-
-// getArr(...arr,...arr2)
-
-//Ternary opetor
+})
 
 
-// if(age<18){
-//     console.log("not allowed");
-// }else{
-//     console.log("allowed");
-// }
 
-// loading = true
 
-// loading ? console.log("loading... ") : "";
 
-//map() & filter()
+
+
+
+
+    
+
+    // addProductBtn.addEventListener('click', function (){
+
+    //    listCreated = document.createElement("li");
+    //    listCreated.textContent = "product -1 added"
+
+    //    showProducts.appendChild(listCreated)
+
+    
+    // })
+
 
 
 
